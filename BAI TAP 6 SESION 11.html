@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Nhập hai số</title>
+</head>
+<body>
+  <script>
+    // Nhập hai số
+    const a = parseFloat(prompt("Mời bạn nhập vào số a"));
+    const b = parseFloat(prompt("Mời bạn nhập vào số b"));
+
+    // Kiểm tra tính hợp lệ của số nhập vào
+    if (isNaN(a) || isNaN(b)) {
+      alert("Vui lòng nhập số hợp lệ.");
+    } else {
+      alert(`Bạn đã nhập a = ${a} và b = ${b}`);
+    }
+
+    // Nhập phép tính
+    const operator = prompt("Mời bạn nhập vào các phép tính (+, -, *, /)");
+
+    if (isNaN(a) || isNaN(b)) {
+      alert("Vui lòng nhập số hợp lệ.");
+    } else {
+      let result;
+      let valid = true;
+
+      // Thực hiện phép tính
+      switch (operator) {
+        case "+":
+          result = a + b;
+          break;
+        case "-":
+          result = a - b;
+          break;
+        case "*":
+          result = a * b;
+          break;
+        case "/":
+          if (b === 0) {
+            alert("Không thể chia cho 0.");
+            valid = false;
+          } else {
+            result = a / b;
+          }
+          break;
+        default:
+          alert("Phép tính không hợp lệ.");
+          valid = false;
+      }
+
+      // Hiển thị kết quả nếu phép tính hợp lệ
+      if (valid) {
+        alert(`Kết quả của phép tính trên: ${a} ${operator} ${b} = ${result}`);
+      }
+    }
+  </script>
+</body>
+</html>
